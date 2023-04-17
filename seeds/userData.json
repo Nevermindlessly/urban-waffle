@@ -1,0 +1,18 @@
+[
+    {
+      "user": "jmill100",
+      "password": "password123",
+      "premium": "false"
+    },
+    {
+      "user": "notabot",
+      "password": "010011101101011",
+      "premium": "false"
+    },
+    {
+      "user": "strongbad",
+      "password": "gowdev999",
+      "premium": "true"
+    }
+  ]
+  
