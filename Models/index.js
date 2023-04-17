@@ -1,77 +1,50 @@
-const Users = require('./users');
+// Import the models
+
+const User = require('./users');
 const Artist = require('./artist');
 const Album = require('./album');
-const Song = require('./song');
-const Genre = require('./genre');
+const Review = require('./review');
 
 // Associations
-User.hasMany(Album, {
-  foreignKey: 'userId',
-  as: 'albums',
+
+// Set a one-to-many relationship between User and Review
+// A user can have many reviews
+User.hasMany(Review, {
+  foreignKey: 'userId', // The foreign key in the Review table
+  onDelete: 'CASCADE', // If a user is deleted, delete all of their reviews
 });
 
-User.hasMany(Song, {
-  foreignKey: 'userId',
-  as: 'songs',
-});
-
-User.hasMany(Artist, {
-  foreignKey: 'userId',
-  as: 'artists',
-});
-
-Artist.belongsTo(User, {
+// A review belongs to a user
+Review.belongsTo(User, {
   foreignKey: 'userId',
 });
 
+// A artist can have many albums
 Artist.hasMany(Album, {
   foreignKey: 'artistId',
-  as: 'albums',
+  onDelete: 'CASCADE', // If a artist is deleted, delete all of their albums
 });
 
-Artist.hasMany(Song, {
-  foreignKey: 'artistId',
-  as: 'songs',
-});
-
+// A album belongs to a artist
 Album.belongsTo(Artist, {
   foreignKey: 'artistId',
 });
 
-Album.belongsTo(User, {
-  foreignKey: 'userId',
-});
-
-Album.hasMany(Song, {
+// A album can have many reviews
+Album.hasMany(Review, {
   foreignKey: 'albumId',
-  as: 'songs',
+  onDelete: 'CASCADE', // If a album is deleted, delete all of their reviews
 });
 
-Song.belongsTo(Artist, {
-  foreignKey: 'artistId',
-});
-
-Song.belongsTo(Album, {
+// A review belongs to a album
+Review.belongsTo(Album, {
   foreignKey: 'albumId',
 });
 
-Song.belongsTo(Genre, {
-  foreignKey: 'genreId',
-});
-
-Song.belongsTo(User, {
-  foreignKey: 'userId',
-});
-
-Genre.hasMany(Song, {
-  foreignKey: 'genreId',
-  as: 'songs',
-});
-
+// Export the models for use in other files
 module.exports = {
-  Users,
+  User,
   Artist,
   Album,
-  Song,
-  Genre,
+  Review,
 };
