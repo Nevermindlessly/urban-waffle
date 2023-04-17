@@ -1,0 +1,26 @@
+{{#if logged_in}}
+  <h1>Welcome, {{username}}!</h1>
+  <a href="/logout">Logout</a>
+{{/if}}
+<h2>Explore Music</h2>
+<form id="search-form">
+  <label for="search">Search:</label>
+  <input type="text" id="search" name="search" placeholder="Search by artist, album, or song...">
+  <button type="submit">Search</button>
+</form>
+<h2>Genres</h2>
+<ul>
+  {{#each genres}}
+    <li>
+      <a href="/genre/{{this.id}}">{{this.name}}</a>
+    </li>
+  {{/each}}
+</ul>
+<h2>Your Playlists</h2>
+<ul>
+  {{#each playlists}}
+    <li>
+      <a href="/playlist/{{this.id}}">{{this.name}}</a>
+    </li>
+  {{/each}}
+</ul>
