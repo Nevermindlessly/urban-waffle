@@ -1,0 +1,20 @@
+[
+    {
+      "name": "Daughters",
+      "albums": ["You Won't Get What You Want"],
+      "bio": "",
+      "active": "false"
+    },
+    {
+      "name": "PUP",
+      "albums": ["Morbid Stuff"],
+      "bio": "",
+      "active": "true"
+    },
+    {
+      "name": "Lemon Demon",
+      "albums": ["Spirit Phone"],
+      "bio": "",
+      "active": "true"
+    }
+]

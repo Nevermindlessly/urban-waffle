@@ -22,8 +22,8 @@
 
   ## Questions
 
-  https://github.com/MattLombard
-  https://github.com/MichaelHobert01
+  https://github.com/MattLombard<br>
+  https://github.com/MichaelHobert01<br>
   https://github.com/Nevermindlessly
 
   ## Images
