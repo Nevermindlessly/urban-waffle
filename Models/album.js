@@ -11,14 +11,6 @@ Album.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,

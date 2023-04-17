@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Song extends Model {}
+class Review extends Model {}
 
-Song.init(
+Review.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -19,18 +19,6 @@ Song.init(
         key: 'id',
       },
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    artistId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'artist',
-        key: 'id',
-      },
-    },
     albumId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -39,26 +27,26 @@ Song.init(
         key: 'id',
       },
     },
-    genreId: {
+    rating: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: 'genre',
-        key: 'id',
+      validate: {
+        min: 1,
+        max: 10,
       },
     },
-    audioFile: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    reviewText: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'song',
+    modelName: 'review',
   }
 );
 
-module.exports = Song;
+module.exports = Review;
