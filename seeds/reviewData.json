@@ -1,0 +1,23 @@
+[
+    {
+      "user": "jmill100",
+      "name": "Daughters",
+      "album": "You Won't Get What You Want",
+      "reviewText": "so good",
+      "rating": 9
+    },
+    {
+      "user": "notabot",
+      "name": "PUP",    
+      "album": "Morbid Stuff",
+      "reviewText": "STREAM IT NOW",
+      "rating": 10
+    },
+    {
+      "user": "strongbad",
+      "name": "Lemon Demon",
+      "album": "Spirit Phone",
+      "reviewText": "too scary",
+      "rating": 3
+    }
+  ]
