@@ -1,4 +1,3 @@
-DROP DATABASE IF EXISTS userReview_db;
-CREATE DATABASE userReview_db;
-
+DROP DATABASE IF EXISTS tunetrove_db;
+CREATE DATABASE tunetrove_db;
 
