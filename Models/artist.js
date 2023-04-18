@@ -15,7 +15,7 @@ Artist.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    albums: {
+    discog: {
       type: DataTypes.STRING,
       allowNull: false,
     },
