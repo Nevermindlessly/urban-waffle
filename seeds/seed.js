@@ -10,29 +10,30 @@ const userData = require('./userData.json');
 
 // Function to seed database
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
-
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  const artists = await Artist.bulkCreate(artistData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  const albums = await Album.bulkCreate(albumData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  const reviews = await Review.bulkCreate(reviewData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  process.exit(0);
+  try {
+    await sequelize.sync({ force: true });
+    await User.bulkCreate(userData, {
+      individualHooks: true,
+      returning: true,
+    });
+    await Artist.bulkCreate(artistData, {
+      individualHooks: true,
+      returning: true,
+    });
+    await Review.bulkCreate(reviewData, {
+      individualHooks: true,
+      returning: true,
+    });
+    await Album.bulkCreate(albumData, {
+      individualHooks: true,
+      returning: true,
+    });
+    console.log('Database seeding complete!');
+    process.exit(0);
+  } catch (error) {
+    console.error('Error seeding database:', error);
+    process.exit(1);
+  }
 };
 
 // Call
