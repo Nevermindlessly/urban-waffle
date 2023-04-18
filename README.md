@@ -16,11 +16,7 @@
   
   This is an application built for the UNCC full-stack web develpoment bootcamp by Matt Lombard, Michael Hobert, and Josh Miller. (description)
 
-  ## License
-
-  This project is licensed under Apache License 2.0.
-
-  ## Questions
+  ## Contributors
 
   https://github.com/MattLombard<br>
   https://github.com/MichaelHobert01<br>
