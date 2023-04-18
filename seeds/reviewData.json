@@ -1,23 +1,23 @@
 [
     {
-      "user": "jmill100",
-      "name": "Daughters",
-      "album": "You Won't Get What You Want",
-      "reviewText": "so good",
-      "rating": 9
+      "id": 0,
+      "userId": 0,
+      "albumId": 0,
+      "rating": 9,
+      "reviewText": "so good"
     },
     {
-      "user": "notabot",
-      "name": "PUP",    
-      "album": "Morbid Stuff",
-      "reviewText": "STREAM IT NOW",
-      "rating": 10
+      "id": 1,
+      "userId": 1,
+      "albumId": 1,
+      "rating": 10,
+      "reviewText": "STREAM IT NOW"
     },
     {
-      "user": "strongbad",
-      "name": "Lemon Demon",
-      "album": "Spirit Phone",
-      "reviewText": "too scary",
-      "rating": 3
+      "id": 2,
+      "userId": 2,
+      "albumId": 2,
+      "rating": 3,
+      "reviewText": "too scary"
     }
   ]

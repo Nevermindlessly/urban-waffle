@@ -15,6 +15,14 @@ Album.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    songs: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    genres: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     artistId: {
       type: DataTypes.INTEGER,
       allowNull: false,

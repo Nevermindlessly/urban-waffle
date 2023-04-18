@@ -15,6 +15,10 @@ Artist.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    albums: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     bio: {
       type: DataTypes.TEXT,
       allowNull: true,

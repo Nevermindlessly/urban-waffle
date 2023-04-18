@@ -1,17 +1,23 @@
 [
     {
-      "album": "You Won't Get What You Want",
+      "id": 0,
+      "title": "You Won't Get What You Want",
       "songs": ["City Song", "Long Road, No Turns", "Satan in the Wait", "The Flammable Man", "The Lord's Song", "Less Sex", "Daughter", "The Reason They Hate Me", "Ocean Song", "Guest House"],
-      "genres": ["Noise Rock", "Industrial", "No Wave", "Gothic Rock"]
+      "genres": ["Noise Rock", "Industrial", "No Wave", "Gothic Rock"],
+      "artistId": 0
     },
     {
-      "album": "Morbid Stuff",
+      "id": 1,
+      "title": "Morbid Stuff",
       "songs": ["Morbid Stuff", "Kids", "Free at Last", "See You at Your Funeral", "Scorpion Hill", "Closure", "Bloody Mary, Kate and Ashley", "Sibling Rivary", "Full Blown Meltdown", "Bare Hands", "City"],
-      "genres": ["Pop Punk", "Power Pop", "Indie Rock", "Emo"]
+      "genres": ["Pop Punk", "Power Pop", "Indie Rock", "Emo"],
+      "artistId": 1
     },
     {
-      "album": "Spirit Phone",
+      "id": 2,
+      "title": "Spirit Phone",
       "songs": ["Lifetime Achievement Award", "Touch-Tone Telephone", "Cabinet Man", "No Eyed Girl", "When He Died", "Sweet Bod", "Eighth Wonder", "Ancient Aliens", "Soft Fuzzy Man", "As Your Father I Expressly Forbid It", "I Earn My Life", "Reaganomics", "Man-Made Object", "Spiral of Ants"],
-      "genres": ["Synthpop", "New Wave", "Indietronica"]
+      "genres": ["Synthpop", "New Wave", "Indietronica"],
+      "artistId": 2
     }
 ]

@@ -19,21 +19,21 @@ Review.belongsTo(User, {
   foreignKey: 'userId',
 });
 
-// A artist can have many albums
+// An artist can have many albums
 Artist.hasMany(Album, {
   foreignKey: 'artistId',
   onDelete: 'CASCADE', // If a artist is deleted, delete all of their albums
 });
 
-// A album belongs to a artist
+// An album belongs to a artist
 Album.belongsTo(Artist, {
   foreignKey: 'artistId',
 });
 
-// A album can have many reviews
+// An album can have many reviews
 Album.hasMany(Review, {
   foreignKey: 'albumId',
-  onDelete: 'CASCADE', // If a album is deleted, delete all of their reviews
+  onDelete: 'CASCADE', // If an album is deleted, delete all of their reviews
 });
 
 // A review belongs to a album
