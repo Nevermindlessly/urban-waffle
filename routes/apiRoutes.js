@@ -7,6 +7,6 @@ const escommentRoutes = require('./commentRoutes');
 router.use('/users', userRoutes);
 router.use('/music', musicRoutes);
 router.use('/playlists', playlistRoutes);
-router.use('/comments', commentRoutes);
+router.use('/comments', escommentRoutes);
 
 module.exports = router;
