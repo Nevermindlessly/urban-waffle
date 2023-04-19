@@ -1,12 +1,14 @@
 const router = require('express').Router();
-const withAuth = require('../../utils/auth');
-const { User, Review, Album, Artist } = require('../../Models');
+const withAuth = require('../utils/auth');
+const { User, Review, Album, Artist } = require('../Models');
 
 // get all reviews for homepage
 router.get('/', async (req, res) => {
   try {
     const reviewData = await Review.findAll({
+      // Find all reviews
       include: [
+        // Include the username, album title, and artist name
         {
           model: User,
           attributes: ['username'],
@@ -28,3 +30,5 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: 'Error retrieving reviews', error });
   }
 });
+
+module.exports = router;

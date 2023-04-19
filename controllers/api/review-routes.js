@@ -6,11 +6,12 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
   try {
     const newReview = await Review.create({
-      ...req.body,
-      userId: req.session.userId,
+      // Create a new review
+      ...req.body, // Get the review data from the request body
+      userId: req.session.userId, // Get the user id from the session
     });
 
-    res.status(200).json(newReview);
+    res.status(200).json(newReview); // Send the new review data back to the client
   } catch (err) {
     res.status(400).json(err);
   }

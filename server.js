@@ -6,7 +6,7 @@ const path = require('path');
 const routes = require('./controllers'); // This is the routes folder
 const sequelize = require('./config/connection'); //
 const SequelizeStore = require('connect-session-sequelize')(session.Store); //
-
+const helpers = require('./utils/helpers');
 const app = express(); // Create an instance of the Express app
 const PORT = process.env.PORT || 3001; // Set the port to either the environment variable PORT or 3001
 
