@@ -1,21 +1,17 @@
 [
-    {
-      "id": 0,
-      "user": "jmill100",
-      "password": "password123",
-      "premium": "false"
-    },
-    {
-      "id": 1,
-      "user": "notabot",
-      "password": "010011101101011",
-      "premium": "false"
-    },
-    {
-      "id": 3,
-      "user": "strongbad",
-      "password": "gowdev999",
-      "premium": "true"
-    }
-  ]
-  
+  {
+    "username": "jmill100",
+    "password": "password123",
+    "premium": false
+  },
+  {
+    "username": "notabot",
+    "password": "010011101101011",
+    "premium": false
+  },
+  {
+    "username": "strongbad",
+    "password": "gowdev999",
+    "premium": true
+  }
+]

@@ -16,7 +16,8 @@ Artist.init(
       allowNull: false,
     },
     discog: {
-      type: DataTypes.STRING,
+      type: DataTypes.JSON,
+
       allowNull: false,
     },
     bio: {
