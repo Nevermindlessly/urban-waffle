@@ -1,23 +1,20 @@
 [
-    {
-      "id": 0,
-      "userId": 0,
-      "albumId": 0,
-      "rating": 9,
-      "reviewText": "so good"
-    },
-    {
-      "id": 1,
-      "userId": 1,
-      "albumId": 1,
-      "rating": 10,
-      "reviewText": "STREAM IT NOW"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "albumId": 2,
-      "rating": 3,
-      "reviewText": "too scary"
-    }
-  ]
+  {
+    "userId": 1,
+    "albumId": 1,
+    "rating": 9,
+    "reviewText": "so good"
+  },
+  {
+    "userId": 2,
+    "albumId": 2,
+    "rating": 10,
+    "reviewText": "STREAM IT NOW"
+  },
+  {
+    "userId": 3,
+    "albumId": 3,
+    "rating": 3,
+    "reviewText": "too scary"
+  }
+]
