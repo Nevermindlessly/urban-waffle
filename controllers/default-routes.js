@@ -2,32 +2,22 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { User, Review, Album, Artist } = require('../Models');
 
-// get all reviews for homepage
+// Get all albums for the homepage
 router.get('/', async (req, res) => {
   try {
-    const reviewData = await Review.findAll({
-      // Find all reviews
+    const albumData = await Album.findAll({
       include: [
-        // Include the username, album title, and artist name
         {
-          model: User,
-          attributes: ['username'],
-        },
-        {
-          model: Album,
-          attributes: ['title'],
-          include: {
-            model: Artist,
-            attributes: ['name'],
-          },
+          model: Artist,
+          attributes: ['name'],
         },
       ],
     });
 
-    const reviews = reviewData.map((review) => review.get({ plain: true }));
-    res.status(200).json(reviews);
+    const albums = albumData.map((album) => album.get({ plain: true }));
+    res.status(200).json(albums);
   } catch (error) {
-    res.status(500).json({ message: 'Error retrieving reviews', error });
+    res.status(500).json({ message: 'Error retrieving albums', error });
   }
 });
 
