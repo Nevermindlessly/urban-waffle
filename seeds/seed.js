@@ -1,6 +1,6 @@
 // Dependencies
 const sequelize = require('../config/connection');
-const { User, Artist, Review, Album } = require('../models');
+const { User, Artist, Review, Album } = require('../Models');
 
 // Seed data
 const albumData = require('./albumData.json');

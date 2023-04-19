@@ -3,38 +3,63 @@ const { Review } = require('../../Models');
 const withAuth = require('../../utils/auth');
 
 // post a new review
-router.post('/', withAuth, async (req, res) => {
+// Post a review for a specific album by a user
+router.post('/:albumId/user/:userId', async (req, res) => {
   try {
+    const albumId = req.params.albumId;
+    const userId = req.params.userId;
+
+    const { rating, reviewText } = req.body;
+
+    if (!rating || !reviewText) {
+      return res.status(400).json({ message: 'Please provide a rating and review text' });
+    }
+
     const newReview = await Review.create({
-      // Create a new review
-      ...req.body, // Get the review data from the request body
-      userId: req.session.userId, // Get the user id from the session
+      rating: rating,
+      reviewText: reviewText,
+      albumId: albumId,
+      userId: userId,
     });
 
-    res.status(200).json(newReview); // Send the new review data back to the client
-  } catch (err) {
-    res.status(400).json(err);
+    res.status(201).json({ message: 'Review created successfully', review: newReview });
+  } catch (error) {
+    res.status(500).json({ message: 'Error creating review', error });
   }
 });
 
-// delete a review
-router.delete('/:id', withAuth, async (req, res) => {
+// Get all reviews for a specific album
+router.get('/:albumId', withAuth, async (req, res) => {
   try {
-    const reviewData = await Review.destroy({
+    const albumId = req.params.albumId;
+    const reviewData = await Review.findAll({
       where: {
-        id: req.params.id,
-        userId: req.session.userId,
+        albumId: albumId,
       },
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Album,
+          attributes: ['title'],
+          include: {
+            model: Artist,
+            attributes: ['name'],
+          },
+        },
+      ],
     });
 
-    if (!reviewData) {
-      res.status(404).json({ message: 'No review found with this id!' });
-      return;
+    if (!reviewData.length) {
+      return res.status(404).json({ message: 'No reviews found for this album' });
     }
 
-    res.status(200).json(reviewData);
-  } catch (err) {
-    res.status(500).json(err);
+    const reviews = reviewData.map((review) => review.get({ plain: true }));
+    res.status(200).json(reviews);
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving reviews', error });
   }
 });
 
