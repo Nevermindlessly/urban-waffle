@@ -3,11 +3,8 @@
   <a href="/logout">Logout</a>
 {{/if}}
 <h2>Explore Music</h2>
-<form id="search-form">
-  <label for="search">Search:</label>
-  <input type="text" id="search" name="search" placeholder="Search by artist, album, or song...">
-  <button type="submit">Search</button>
-</form>
+<h2>Add a Review Score</h2>
+
 <h2>Genres</h2>
 <ul>
   {{#each genres}}
@@ -24,3 +21,15 @@
     </li>
   {{/each}}
 </ul>
+<h2>Add a Review Score</h2>
+<form id="review-form">
+  <label for="score">Score:</label>
+  <input type="number" id="score" name="score" min="1" max="100">
+  <a href="#review-section"><button type="button">Add Review</button></a>
+</form>
+<div id="review-section">
+  <h2>Review an Album</h2>
+  <form id="album-review-form">
+    <!-- form elements for album review go here -->
+  </form>
+</div>
