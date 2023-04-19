@@ -2,21 +2,21 @@
     {
       "id": 0,
       "name": "Daughters",
-      "albums": ["You Won't Get What You Want"],
+      "discog": ["You Won't Get What You Want"],
       "bio": "Noise rock group from Providence, RI consisting of Alexis Marshal (vocals), Nick Sadler (guitar), Samuel Moorehouse (bass), and Jonathan Syverson (drums).",
       "active": "false"
     },
     {
       "id": 1,
       "name": "PUP",
-      "albums": ["Morbid Stuff"],
+      "discog": ["Morbid Stuff"],
       "bio": "Pop punk from the Great White North.",
       "active": "true"
     },
     {
       "id": 2,
       "name": "Lemon Demon",
-      "albums": ["Spirit Phone"],
+      "discog": ["Spirit Phone"],
       "bio": "Homeschool icon and mashup savant Neil Cicierega.",
       "active": "true"
     }
