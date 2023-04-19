@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Review } = require('../../Models');
+const { Review, Album, User } = require('../../Models');
 const withAuth = require('../../utils/auth');
 
 // post a new review
 // Post a review for a specific album by a user
-router.post('/:albumId/user/:userId', async (req, res) => {
+router.post('/:albumId/user/:userId', withAuth, async (req, res) => {
   try {
     const albumId = req.params.albumId;
     const userId = req.params.userId;
@@ -43,11 +43,7 @@ router.get('/:albumId', withAuth, async (req, res) => {
         },
         {
           model: Album,
-          attributes: ['title'],
-          include: {
-            model: Artist,
-            attributes: ['name'],
-          },
+          attributes: ['title,artist'],
         },
       ],
     });
@@ -60,6 +56,29 @@ router.get('/:albumId', withAuth, async (req, res) => {
     res.status(200).json(reviews);
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving reviews', error });
+  }
+});
+
+// Delete a specific review by a user
+router.delete('/review/:reviewId/user/:userId', withAuth, async (req, res) => {
+  try {
+    const reviewId = req.params.albumId;
+    const userId = req.params.userId;
+
+    const deletedRows = await Review.destroy({
+      where: {
+        id: reviewId,
+        userId: userId,
+      },
+    });
+
+    if (deletedRows === 0) {
+      return res.status(404).json({ message: 'No review found for this user' });
+    }
+
+    res.status(200).json({ message: 'Review deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error deleting review', error });
   }
 });
 

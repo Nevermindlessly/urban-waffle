@@ -1,7 +1,6 @@
 // Import the models
 
 const User = require('./users');
-const Artist = require('./artist');
 const Album = require('./album');
 const Review = require('./review');
 
@@ -19,17 +18,6 @@ Review.belongsTo(User, {
   foreignKey: 'userId',
 });
 
-// An artist can have many albums
-Artist.hasMany(Album, {
-  foreignKey: 'artistId',
-  onDelete: 'CASCADE', // If a artist is deleted, delete all of their albums
-});
-
-// An album belongs to a artist
-Album.belongsTo(Artist, {
-  foreignKey: 'artistId',
-});
-
 // An album can have many reviews
 Album.hasMany(Review, {
   foreignKey: 'albumId',
@@ -44,7 +32,6 @@ Review.belongsTo(Album, {
 // Export the models for use in other files
 module.exports = {
   User,
-  Artist,
   Album,
   Review,
 };

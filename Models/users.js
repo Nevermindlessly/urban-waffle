@@ -28,10 +28,6 @@ User.init(
         len: [8, 20], // 8 to 20 characters for the password
       },
     },
-
-    premium: {
-      type: DataTypes.BOOLEAN,
-    },
   },
 
   {
