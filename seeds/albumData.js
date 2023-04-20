@@ -3,18 +3,18 @@ const { Album } = require('../Models');
 const albumData = [
   {
     title: "You Won't Get What You Want",
-    genre: 'Rap',
-    artist: 'reptile house',
+    genre: 'Noise',
+    artist: 'Daughters',
   },
   {
     title: 'Morbid Stuff',
     genre: 'Punk Rock',
-    artist: 'alex g',
+    artist: 'PUP',
   },
   {
     title: 'Spirit Phone',
     genre: 'Indie Rock',
-    artist: 'The Soft Moon',
+    artist: 'Lemon Demon',
   },
   {
     title: 'When We All Fall Asleep, Where Do We Go?',
