@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { User, Review, Album } = require('../Models');
+const { Album } = require('../Models');
 
 // Get all albums for the homepage
 router.get('/', async (req, res) => {
