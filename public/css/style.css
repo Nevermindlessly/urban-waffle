@@ -62,18 +62,9 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
-
 /* Links */
 a {
-  color: #007bff;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* Error message */
@@ -90,4 +81,38 @@ ul {
 
 li {
   margin-bottom: 0.5rem;
+}
+
+/* Nav bar */
+nav {
+  background: linear-gradient(to bottom right, #f7b733, #fc4a1a);
+  padding: 10px;
+  overflow: hidden;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-left: 75px;
+}
+
+.logo a {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 36px;
+}
+
+.links {
+  margin-right: 50px;
+}
+
+.links a {
+  font-weight: bold;
+  color: #fff;
+  margin-left: 20px;
 }
