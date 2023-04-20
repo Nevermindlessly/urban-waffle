@@ -107,4 +107,4 @@ const { Review, User, Album } = require('../Models');
 //   }
 // });
 
-// module.exports = router;
+module.exports = router;
