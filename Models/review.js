@@ -37,7 +37,7 @@ Review.init(
         max: 10,
       },
     },
-    reviewText: {
+    review_text: {
       type: DataTypes.STRING,
       allowNull: true,
     },
