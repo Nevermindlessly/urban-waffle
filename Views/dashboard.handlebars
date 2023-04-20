@@ -1,4 +1,4 @@
-{{#if logged_in}}
+{{!-- {{#if logged_in}}
   <h1>Welcome, {{username}}!</h1>
   <a href="/logout">Logout</a>
 {{/if}}
@@ -32,4 +32,17 @@
   <form id="album-review-form">
     <!-- form elements for album review go here -->
   </form>
-</div>
+</div> --}}
+
+<h1>Albums</h1>
+<ul>
+  {{#each albums}}
+    <li>
+      <h2><a href='#' data-album-id='{{id}}' class='album-title'>{{title}}</a></h2>
+      <p>Artist: {{artist}}</p>
+      <p>Genre: {{genre}}</p>
+    </li>
+  {{/each}}
+</ul>
+
+<script src='/js/dashboard.js'></script>

@@ -15,22 +15,13 @@ Album.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    songs: {
-      type: DataTypes.JSON,
+    genre: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    genres: {
-      type: DataTypes.JSON,
-
+    artist: {
+      type: DataTypes.STRING,
       allowNull: false,
-    },
-    artistId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'artist',
-        key: 'id',
-      },
     },
   },
   {

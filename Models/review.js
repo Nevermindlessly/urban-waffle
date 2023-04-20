@@ -13,6 +13,7 @@ Review.init(
     },
     userId: {
       type: DataTypes.INTEGER,
+      defaultValue: 1,
       allowNull: false,
       references: {
         model: 'user',
@@ -21,6 +22,7 @@ Review.init(
     },
     albumId: {
       type: DataTypes.INTEGER,
+      defaultValue: 1,
       allowNull: false,
       references: {
         model: 'album',
@@ -36,13 +38,13 @@ Review.init(
       },
     },
     reviewText: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true,
     },
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'review',
