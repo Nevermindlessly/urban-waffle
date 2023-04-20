@@ -1,9 +1,10 @@
-const router = require('express').Router(); // Import the Express.js router object
+const router = require('express').Router();
+const homeController = require('./homeController');
+const albumController = require('./albumController');
+const userController = require('./userController');
 
-const apiRoutes = require('./api');
-const defaultRoutes = require('./default-routes');
-
-router.use('/', defaultRoutes);
-router.use('/api', apiRoutes);
+router.use('/', homeController);
+router.use('/album', albumController);
+router.use('/user', userController);
 
 module.exports = router;

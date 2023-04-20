@@ -18,7 +18,7 @@ User.init(
       unique: true,
       validate: {
         len: [3, 20], // 3 to 20 characters for the username
-        alphanumeric: true, // only letters and numbers
+        is: /^[a-zA-Z0-9]+$/i, // only letters and numbers
       },
     },
     password: {
