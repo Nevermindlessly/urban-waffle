@@ -42,6 +42,12 @@ app.use(express.urlencoded({ extended: true })); // Parse incoming URL-encoded r
 
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the public directory
 
+app.use((req, res, next) => {
+  res.locals.logged_in = req.session.logged_in;
+  res.locals.user_id = req.session.user_id;
+  next();
+});
+
 app.use(routes); // Use the routes defined in the controllers folder
 
 // Sync the Sequelize models with the database and start listening for requests on the specified port

@@ -12,7 +12,7 @@ router.get('/:albumId', async (req, res) => {
 
     const album = albumData.get({ plain: true });
     const reviews = reviewsData.map((review) => review.get({ plain: true }));
-
+    console.log(reviews);
     res.render('albumspecificreview', {
       album,
       reviews,
