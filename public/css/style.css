@@ -7,15 +7,12 @@
 
 /* Typography */
 body {
-  font-family: monospace, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color:black;
 }
 
-h1 {
-  color: aliceblue;
-}
+h1,
 h2,
 h3,
 h4,
@@ -33,6 +30,11 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+/* Links */
+a {
+  text-decoration: none;
 }
 
 /* Forms */
@@ -65,46 +67,106 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  border-color: #0056b3;
-}
-
-
-/* Links */
-a {
-  color: black;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Error message */
-.error {
-  color: red;
-  margin-bottom: 1rem;
-}
-
-/* Lists */
-ul {
-  list-style-type: none;
-  margin-bottom: 1rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
+/* Nav bar */
 nav {
-  background-color: black;
-  display: flex;
-  justify-content: flex-end;
+  background: linear-gradient(to bottom right, #f7b733, #fc4a1a);
+  padding: 10px;
+  overflow: hidden;
 }
 
-.titleofpage {
-  display:flex;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-left: 75px;
+}
+
+.logo a {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 36px;
+}
+
+.links {
+  margin-right: 50px;
+}
+
+.links a {
+  font-weight: bold;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #1b89bc;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+/* Cards */
+.album-list {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-family: monospace;
-  color:aqua;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.album-card {
+  background: linear-gradient(to bottom left, #fce2ad, #f99f86);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.album-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.album-card:hover:before {
+  opacity: 1;
+}
+
+.album-title {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.artist-name, .album-genre {
+  margin: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: bold;
 }
