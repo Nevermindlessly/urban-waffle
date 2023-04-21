@@ -2,14 +2,14 @@ const router = require('express').Router();
 const { User } = require('../Models');
 const bcrypt = require('bcrypt');
 
-// // Render the login and signup page
-// router.get('/login-signup', (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect('/'); // Redirect to the homepage if the user is already logged in
-//     return;
-//   }
-//   res.render('login-signup');
-// });
+// Render the login and signup page
+router.get('/login-signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/'); // Redirect to the homepage if the user is already logged in
+    return;
+  }
+  res.render('login-signup');
+});
 
 // // Authenticate a user and log them in
 // router.post('/login', async (req, res) => {
