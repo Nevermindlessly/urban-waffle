@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../Models');
 const bcrypt = require('bcrypt');
+const withAuth = require('../utils/auth');
 
 // Render the login and signup page
 router.get('/login-signup', (req, res) => {
@@ -11,71 +12,71 @@ router.get('/login-signup', (req, res) => {
   res.render('login-signup');
 });
 
-// // Authenticate a user and log them in
-// router.post('/login', async (req, res) => {
-//   try {
-//     const userData = await User.findOne({ where: { username: req.body.username } });
+// Authenticate a user and log them in
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({ where: { username: req.body.username } });
 
-//     if (!userData) {
-//       res.status(400).json({ message: 'Incorrect username or password, please try again' });
-//       return;
-//     }
+    if (!userData) {
+      res.status(400).json({ message: 'Incorrect username or password, please try again' });
+      return;
+    }
 
-//     const validPassword = await bcrypt.compare(req.body.password, userData.password);
+    const validPassword = await bcrypt.compare(req.body.password, userData.password);
 
-//     if (!validPassword) {
-//       res.status(400).json({ message: 'Incorrect username or password, please try again' });
-//       return;
-//     }
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect username or password, please try again' });
+      return;
+    }
 
-//     req.session.save(() => {
-//       req.session.user_id = userData.id;
-//       req.session.username = userData.username;
-//       req.session.loggedIn = true;
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.username = userData.username;
+      req.session.loggedIn = true;
 
-//       res.json({ user: userData, message: 'You are now logged in!' });
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// // Register a new user and log them in
-// router.post('/signup', async (req, res) => {
-//   try {
-//     const userData = await User.create({
-//       username: req.body.username,
-//       password: req.body.password,
-//     });
+// Register a new user and log them in
+router.post('/signup', async (req, res) => {
+  try {
+    const userData = await User.create({
+      username: req.body.username,
+      password: req.body.password,
+    });
 
-//     req.session.save(() => {
-//       req.session.user_id = userData.id;
-//       req.session.username = userData.username;
-//       req.session.loggedIn = true;
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.username = userData.username;
+      req.session.loggedIn = true;
 
-//       res.json({ user: userData, message: 'You have successfully signed up and are now logged in!' });
-//     });
-//   } catch (err) {
-//     if (err.name === 'SequelizeUniqueConstraintError') {
-//       res.status(409).json({ message: 'This username is already taken, please choose another one' });
-//     } else if (err.name === 'SequelizeValidationError') {
-//       res.status(400).json({ message: 'Please make sure your username and password meet the requirements' });
-//     } else {
-//       res.status(500).json(err);
-//     }
-//   }
-// });
-
-// // Log out the authenticated user
-// router.post('/logout', (req, res) => {
-//   if (req.session.loggedIn) {
-//     req.session.destroy(() => {
-//       res.status(204).end();
-//     });
-//   } else {
-//     res.status(404).end();
-//   }
-// });
+      res.json({ user: userData, message: 'You have successfully signed up and are now logged in!' });
+    });
+  } catch (err) {
+    if (err.name === 'SequelizeUniqueConstraintError') {
+      res.status(409).json({ message: 'This username is already taken, please choose another one' });
+    } else if (err.name === 'SequelizeValidationError') {
+      res.status(400).json({ message: 'Please make sure your username and password meet the requirements' });
+    } else {
+      res.status(500).json(err);
+    }
+  }
+});
+////////////////////////////////////////////////////////////////
+// Log out the authenticated user, have not tested yet in insomnia
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 //////////////////// All of the below routes are working in insomnia   ////////////////////////
 
