@@ -35,12 +35,14 @@
 </div> --}}
 
 <h1>Albums . . .</h1>
-<ul class="album-list">
+<ul class='album-list'>
   {{#each albums}}
-    <li class="album-card" data-album-id='{{id}}'>
-      <h2 class="album-title">{{title}}</h2>
-      <p class="artist-name">Artist: {{artist}}</p>
-      <p class="album-genre">Genre: {{genre}}</p>
+    <li class='album-card'>
+      <a href='/album/{{id}}' class='album-link'>
+        <h2 class='album-title'>{{title}}</h2>
+        <p class='artist-name'>Artist: {{artist}}</p>
+        <p class='album-genre'>Genre: {{genre}}</p>
+      </a>
     </li>
   {{/each}}
 </ul>
