@@ -34,13 +34,13 @@
   </form>
 </div> --}}
 
-<h1>Albums</h1>
-<ul>
+<h1>Albums . . .</h1>
+<ul class="album-list">
   {{#each albums}}
-    <li>
-      <h2><a href='#' data-album-id='{{id}}' class='album-title'>{{title}}</a></h2>
-      <p>Artist: {{artist}}</p>
-      <p>Genre: {{genre}}</p>
+    <li class="album-card" data-album-id='{{id}}'>
+      <h2 class="album-title">{{title}}</h2>
+      <p class="artist-name">Artist: {{artist}}</p>
+      <p class="album-genre">Genre: {{genre}}</p>
     </li>
   {{/each}}
 </ul>

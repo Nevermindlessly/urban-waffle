@@ -106,6 +106,7 @@ const albumData = [
     genre: 'Electronic',
     artist: 'Björk',
   }
+];
 
 const seedAlbums = () => Album.bulkCreate(albumData);
 
