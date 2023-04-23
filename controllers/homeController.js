@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
     const albumData = await Album.findAll({});
 
     const albums = albumData.map((album) => album.get({ plain: true }));
+
     res.render('dashboard', { albums, logged_in: req.session.logged_in });
 
     // res.status(200).json(albums);

@@ -1,39 +1,3 @@
-{{!-- {{#if logged_in}}
-  <h1>Welcome, {{username}}!</h1>
-  <a href="/logout">Logout</a>
-{{/if}}
-<h2>Explore Music</h2>
-<h2>Add a Review Score</h2>
-
-<h2>Genres</h2>
-<ul>
-  {{#each genres}}
-    <li>
-      <a href="/genre/{{this.id}}">{{this.name}}</a>
-    </li>
-  {{/each}}
-</ul>
-<h2>Your Playlists</h2>
-<ul>
-  {{#each playlists}}
-    <li>
-      <a href="/playlist/{{this.id}}">{{this.name}}</a>
-    </li>
-  {{/each}}
-</ul>
-<h2>Add a Review Score</h2>
-<form id="review-form">
-  <label for="score">Score:</label>
-  <input type="number" id="score" name="score" min="1" max="100">
-  <a href="#review-section"><button type="button">Add Review</button></a>
-</form>
-<div id="review-section">
-  <h2>Review an Album</h2>
-  <form id="album-review-form">
-    <!-- form elements for album review go here -->
-  </form>
-</div> --}}
-
 <h1>Albums . . .</h1>
 <ul class='album-list'>
   {{#each albums}}

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Review, User, Album } = require('../Models');
 const withAuth = require('../utils/auth');
-
+////
 router.get('/:albumId', async (req, res) => {
   try {
     const albumData = await Album.findByPk(req.params.albumId);

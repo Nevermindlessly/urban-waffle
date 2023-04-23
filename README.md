@@ -12,9 +12,9 @@
 
   ## Description
 
-  (link)
+  https://agile-atoll-63979.herokuapp.com/
   
-  This is an application built for the UNCC full-stack web develpoment bootcamp by Matt Lombard, Michael Hobert, and Josh Miller. The app, TuneTrove, seeks to provide users with a platform to discover new music and share their own findings via a community-driven rating and review system. Users can view artist and album data, as well as post and read entries regarding those releases. 
+  This is an application built for the UNCC full-stack web develpoment bootcamp by Matt Lombard, Michael Hobert, and Josh Miller. The app, TuneTrove, seeks to provide users with a platform to discover new music and share their own findings via a community-driven review system. Users can view artist and album data, as well as post and read entries regarding those releases. 
 
   ## Contributors
 
@@ -24,4 +24,4 @@
 
   ## Images
 
-  (screenshots)
+  ![SITE_LANDING_PAGE](public/images/tunetrove.png)
